@@ -443,7 +443,7 @@ export class EntityManager {
                     const metadata = this.connection.getMetadata(entityTarget);
 
                     const databaseEntityLoader = new SubjectBuilder(this.connection, queryRunner);
-                    await databaseEntityLoader.persist(entity, metadata);
+                    await databaseEntityLoader.remove(entity, metadata);
 
                     return new SubjectOperationExecutor(this.connection, transactionEntityManager, queryRunner, databaseEntityLoader.operateSubjects);
                 }));
