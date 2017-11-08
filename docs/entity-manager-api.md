@@ -179,10 +179,11 @@ const users = await manager.findByIds(User, [1, 2, 3]);
 const timber = await manager.findOne(User, { firstName: "Timber" });
 ```
 
-* `findOneById` - Finds entity with given id.
+* ~~`findOneById`~~ (deprecated) - Finds entity with given id.
+This method is deprecated in favor of `findOne(id)`.
 
 ```typescript
-const user = await manager.findOne(User, 1);
+const user = await manager.findOneById(User, 1);
 ```
 
 * `clear` - Clears all the data from the given table (truncates/drops it).

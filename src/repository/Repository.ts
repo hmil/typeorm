@@ -311,18 +311,21 @@ export class Repository<Entity extends ObjectLiteral> {
     /**
      * Finds entity by given id.
      * Optionally find options can be applied.
+     * @deprecated
      */
     findOneById(id: any, options?: FindOneOptions<Entity>): Promise<Entity|undefined>;
 
     /**
      * Finds entity by given id.
      * Optionally conditions can be applied.
+     * @deprecated
      */
     findOneById(id: any, conditions?: DeepPartial<Entity>): Promise<Entity|undefined>;
 
     /**
      * Finds entity by given id.
      * Optionally find options or conditions can be applied.
+     * @deprecated
      */
     findOneById(id: any, optionsOrConditions?: FindOneOptions<Entity>|DeepPartial<Entity>): Promise<Entity|undefined> {
         return this.manager.findOneById(this.metadata.target, id, optionsOrConditions as any);

@@ -213,7 +213,7 @@ createConnection().then(connection => {
     });
     
     app.get("/users/:id", async function(req: Request, res: Response) {
-        return userRepository.findOneById(req.params.id);
+        return userRepository.findOne(req.params.id);
     });
     
     app.post("/users", async function(req: Request, res: Response) {

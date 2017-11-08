@@ -696,18 +696,21 @@ export class EntityManager {
     /**
      * Finds entity with given id.
      * Optionally find options can be applied.
+     * @deprecated
      */
     findOneById<Entity>(entityClass: ObjectType<Entity>|string, id: any, options?: FindOneOptions<Entity>): Promise<Entity|undefined>;
 
     /**
      * Finds entity with given id.
      * Optionally conditions can be applied.
+     * @deprecated
      */
     findOneById<Entity>(entityClass: ObjectType<Entity>|string, id: any, conditions?: Partial<Entity>): Promise<Entity|undefined>;
 
     /**
      * Finds entity with given id.
      * Optionally find options or conditions can be applied.
+     * @deprecated
      */
     findOneById<Entity>(entityClass: ObjectType<Entity>|string, id: any, optionsOrConditions?: FindOneOptions<Entity>|Partial<Entity>): Promise<Entity|undefined> {
         const metadata = this.connection.getMetadata(entityClass);

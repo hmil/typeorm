@@ -175,16 +175,19 @@ const [timbers, timbersCount] = await repository.findAndCount({ firstName: "Timb
 const users = await repository.findByIds([1, 2, 3]);
 ```
 
-* `findOne` - Finds first entity that matches given find options.
+* `findOne` - Finds the first entity that matches given find options.
 
 ```typescript
 const timber = await repository.findOne({ firstName: "Timber" });
+// or search by ID:
+const timber = await repository.findOne(42);
 ```
 
-* `findOneById` - Finds entity with given id.
+* ~~`findOneById`~~ (deprecated) - Finds the entity with the given id.
+This method is deprecated in favor of `findOne(id)`.
 
 ```typescript
-const user = await repository.findOne(1);
+const user = await repository.findOneById(1);
 ```
 
 * `query` - Executes a raw SQL query.
